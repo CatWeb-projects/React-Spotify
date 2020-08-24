@@ -1,0 +1,36 @@
+.circle-button-div {
+  button {
+    background-color: #0a0a16;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    margin-right: 10px;
+  }
+  svg {
+    fill: #fff;
+    border-radius: 50%;
+  }
+}
+.audio-list {
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+    span {
+      margin-right: 20px;
+      color: #ef5466;
+    }
+  }
+  a {
+    margin-right: auto;
+    color: #ef5466;
+    transition-duration: 0.15s;
+  }
+  a:hover {
+    color: #ca2a36;
+  }
+}
