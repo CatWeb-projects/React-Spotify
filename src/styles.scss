@@ -1,7 +1,9 @@
 @import 'ui/molecules/Header/Header.scss';
 @import 'ui/atoms/ResumeButton/ResumeButton.scss';
-@import 'ui/organims/MainLayout/MainLayout.scss';
+@import 'ui/templates/MainLayout/MainLayout.scss';
 @import 'ui/atoms/CircleButton//CircleButton.scss';
+@import 'ui/organims/SongProfile/SongProfile.scss';
+@import 'ui/molecules/PlayerButtons/PlayerButtons.scss';
 
 body,
 html {

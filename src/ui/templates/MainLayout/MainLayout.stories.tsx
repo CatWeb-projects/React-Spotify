@@ -1,5 +1,5 @@
 import React from 'react';
-import { MainLayout } from 'ui/organims/MainLayout/MainLayout';
+import { MainLayout } from 'ui/templates/MainLayout/MainLayout';
 
 export default {
   title: 'MainLayout',

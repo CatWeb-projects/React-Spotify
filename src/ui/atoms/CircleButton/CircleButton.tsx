@@ -10,7 +10,7 @@ export const CircleButton = ({ children }: any) => {
   return (
     <div className="circle-button-div">
       {active ? (
-        <button onClick={play}>
+        <button onClick={play} className={`circle-button-div__button-`}>
           <svg
             className="svg-icon svg-icon-pause"
             focusable="false"
