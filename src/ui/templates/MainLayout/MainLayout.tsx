@@ -5,7 +5,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { SongProfile } from 'ui/organims/SongProfile/SongProfile';
 import { ProviderContext } from 'Context/Context';
 import 'styles.scss';
-import { PlayerButtons } from 'ui/molecules/PlayerButtons/PlayerButtons';
+import { PlayerControls } from 'ui/molecules/PlayerControls/PlayerControls';
+import { ProgressBar } from 'ui/molecules/ProgressBar/ProgressBar';
+import { PlayerOptions } from 'ui/molecules/PlayerOptions/PlayerOptions';
 
 export const MainLayout = ({ children }: any) => {
   return (
@@ -22,7 +24,9 @@ export const MainLayout = ({ children }: any) => {
             </Route>
           </Switch>
           <div className="player-container">
-            <PlayerButtons />
+            <PlayerControls />
+            <ProgressBar />
+            <PlayerOptions />
           </div>
         </div>
       </Router>

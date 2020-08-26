@@ -7,6 +7,9 @@ export const Context = React.createContext<any>(defaultValue);
 export const ProviderContext = (props: any) => {
   const [list, setList] = useState<any>([]);
   const [song, setSong] = useState<any>();
+  const [currentTime, setCurrentTime] = useState<any>();
+  const [durationTime, setDurationTime] = useState<any>();
+
   const audio: any = [
     {
       track: 'Lindsey Stirling - The Arena',
@@ -50,9 +53,22 @@ export const ProviderContext = (props: any) => {
     setList(audio);
   }, []);
 
+  useEffect(() => {}, []);
+
   const { children } = props;
   return (
-    <Context.Provider value={{ list, setList, song, setSong }}>
+    <Context.Provider
+      value={{
+        list,
+        setList,
+        song,
+        setSong,
+        currentTime,
+        setCurrentTime,
+        durationTime,
+        setDurationTime
+      }}
+    >
       {children}
     </Context.Provider>
   );

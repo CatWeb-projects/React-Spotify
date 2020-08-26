@@ -1,0 +1,41 @@
+.player-options {
+  display: flex;
+  align-items: center;
+  > div {
+    margin: 0 5px;
+  }
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    overflow: hidden;
+    transition-duration: 0.15s;
+    border-radius: 50%;
+    padding: 5px;
+  }
+  button:hover {
+    background-color: #eaeaea;
+  }
+}
+.queue-option {
+  margin-left: 12px;
+  padding-left: 20px;
+  border-left: 1px solid #eaeaea;
+  cursor: pointer;
+  transition-duration: 0.15s;
+  > div {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+  }
+  > div:hover {
+    background-color: #eaeaea;
+  }
+  button {
+    border-radius: 0;
+  }
+  button:hover {
+    background: none;
+  }
+}

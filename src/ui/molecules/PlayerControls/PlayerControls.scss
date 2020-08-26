@@ -1,0 +1,31 @@
+.player-controls {
+  display: flex;
+  > div {
+    display: flex;
+    align-items: center;
+  }
+  button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition-duration: 0.15s;
+    border-radius: 50%;
+    padding: 10px;
+  }
+  button:hover {
+    background-color: #eaeaea;
+  }
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+.play-button {
+  padding: 12px;
+  svg {
+    width: 28px;
+    height: 28px;
+  }
+}
