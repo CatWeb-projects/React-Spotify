@@ -1,16 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { Context } from 'Context/Context';
+import 'ui/atoms/CircleButton//CircleButton.scss';
 
 export const CircleButton = ({ children }: any) => {
   const [active, setActive] = useState<boolean>(false);
+  const { setPlaying } = useContext(Context);
 
-  const play = (e: any) => {
-    e.preventDefault();
+  const changes = () => {
     setActive(!active);
+    if (active) {
+      setPlaying(true);
+      console.log('play');
+    } else {
+      setPlaying(false);
+      console.log('pause');
+    }
   };
   return (
     <div className="circle-button-div">
       {active ? (
-        <button onClick={play} className={`circle-button-div__button-`}>
+        <button onClick={changes} className={`circle-button-div__button-`}>
           <svg
             className="svg-icon svg-icon-pause"
             focusable="false"
@@ -23,7 +32,7 @@ export const CircleButton = ({ children }: any) => {
           </svg>
         </button>
       ) : (
-        <button onClick={play}>
+        <button onClick={changes}>
           <svg
             className="svg-icon svg-icon-play"
             focusable="false"

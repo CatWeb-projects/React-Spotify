@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { Context } from 'Context/Context';
 import { useParams } from 'react-router-dom';
 import { CircleButton } from 'ui/atoms/CircleButton/CircleButton';
+import 'ui/organims/SongProfile/SongProfile.scss';
 
 export const SongProfile = () => {
   const { list, song, setSong } = useContext<any>(Context);

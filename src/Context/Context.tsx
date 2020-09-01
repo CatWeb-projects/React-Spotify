@@ -1,14 +1,76 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, ReactNode } from 'react';
 
-const defaultValue = {};
+interface Audio {
+  track: string;
+  src: string;
+  img: string;
+  artist: string;
+  duration: string;
+}
+
+export interface Props {
+  list: Audio;
+  song: Audio;
+  playing: boolean;
+  volume: number;
+  currentTime: number;
+  durationTime: number;
+  clickedTime: number;
+  currentVolume: number;
+  active: boolean;
+  setSong: React.Dispatch<React.SetStateAction<Audio>>;
+  setList: React.Dispatch<React.SetStateAction<Audio>>;
+  setCurrentTime: React.Dispatch<React.SetStateAction<number>>;
+  setDurationTime: React.Dispatch<React.SetStateAction<number>>;
+  setClickedTime: React.Dispatch<React.SetStateAction<number>>;
+  setPlaying: React.Dispatch<React.SetStateAction<boolean>>;
+  setVolume: React.Dispatch<React.SetStateAction<number>>;
+  setCurrentVolume: React.Dispatch<React.SetStateAction<number>>;
+  setActive: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+interface ProviderProps {
+  children: ReactNode;
+}
+
+const defaultValue = {
+  list: [],
+  song: {
+    track: '',
+    src: '',
+    img: '',
+    artist: '',
+    duration: ''
+  },
+  playing: false,
+  currentTime: 0,
+  durationTime: 0,
+  clickedTime: 0,
+  volume: 0.5,
+  currentVolume: 0,
+  active: true,
+  setList: () => {},
+  setSong: () => {},
+  setCurrentTime: () => {},
+  setDurationTime: () => {},
+  setClickedTime: () => {},
+  setPlaying: () => {},
+  setVolume: () => {},
+  setCurrentVolume: () => {},
+  setActive: () => {}
+};
 
 export const Context = React.createContext<any>(defaultValue);
 
-export const ProviderContext = (props: any) => {
-  const [list, setList] = useState<any>([]);
-  const [song, setSong] = useState<any>();
-  const [currentTime, setCurrentTime] = useState<any>();
-  const [durationTime, setDurationTime] = useState<any>();
+export const ProviderContext = (props: ProviderProps) => {
+  const [list, setList] = useState([]);
+  const [song, setSong] = useState();
+  const [currentTime, setCurrentTime] = useState(0);
+  const [durationTime, setDurationTime] = useState(0);
+  const [volume, setVolume] = useState(0.5);
+  const [playing, setPlaying] = useState();
+  const [clickedTime, setClickedTime] = useState(0);
+  const [active, setActive] = useState<boolean>(true);
 
   const audio: any = [
     {
@@ -66,7 +128,15 @@ export const ProviderContext = (props: any) => {
         currentTime,
         setCurrentTime,
         durationTime,
-        setDurationTime
+        setDurationTime,
+        volume,
+        setVolume,
+        playing,
+        setPlaying,
+        clickedTime,
+        setClickedTime,
+        active,
+        setActive
       }}
     >
       {children}

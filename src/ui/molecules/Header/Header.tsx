@@ -1,4 +1,5 @@
 import React from 'react';
+import 'ui/molecules/Header/Header.scss';
 
 export const Header = ({ children }: any) => {
   return (

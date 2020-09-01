@@ -1,4 +1,7 @@
 import React from 'react';
+import { Queue } from 'ui/atoms/Queue/Queue';
+import { VolumeButton } from 'ui/atoms/VolumeButton/VolumeButton';
+import 'ui/molecules/PlayerOptions/PlayerOptions.scss';
 
 export const PlayerOptions = () => {
   return (
@@ -41,35 +44,8 @@ export const PlayerOptions = () => {
           </svg>
         </button>
       </div>
-      <div className="volume-option">
-        <button>
-          <svg
-            className="svg-icon svg-icon-volume"
-            focusable="false"
-            height="1em"
-            width="1em"
-            viewBox="0 0 12 12"
-            aria-hidden="true"
-          >
-            <path d="M3 4.5H.5v3H3l2.5 2v-7z"></path>
-            <path
-              fill="none"
-              d="M9 2.5c2 1.933 2 5.067 0 7m-1.5-5c.976.829.976 2.171 0 3"
-            ></path>
-          </svg>
-        </button>
-      </div>
-      <div className="queue-option">
-        <div>
-          <button>
-            <img
-              src="https://e-cdns-images.dzcdn.net/images/cover/741da5bb5f1824a3cb578b3326590718/28x28-000000-80-0-0.jpg"
-              alt=""
-            />
-          </button>
-          <span>Queue</span>
-        </div>
-      </div>
+      <VolumeButton />
+      <Queue />
     </div>
   );
 };
