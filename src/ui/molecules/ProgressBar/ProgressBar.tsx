@@ -5,6 +5,7 @@ import 'ui/molecules/ProgressBar/ProgressBar.scss';
 
 export const ProgressBar = () => {
   const {
+    list,
     currentTime,
     setCurrentTime,
     durationTime,
@@ -15,10 +16,12 @@ export const ProgressBar = () => {
     setClickedTime
   } = useContext<any>(Context);
   const [barTooltip, setBarTooltip] = useState<number>(0);
+  const [trackLink, setTrackLink] = useState<any>([]);
 
   const audio: any = useRef(null);
   useEffect(() => {
     const current: any = audio.current;
+    const audioSrc = current.innerHTML;
     current.ontimeupdate = () => {
       let seconds = current.currentTime;
       setCurrentTime(seconds.toFixed());
@@ -89,14 +92,24 @@ export const ProgressBar = () => {
     });
   };
 
+  useEffect(() => {
+    for (let track of list) {
+      setTrackLink(track.src);
+      console.log(track.src);
+    }
+    console.log(trackLink);
+  }, [list, trackLink]);
+
   return (
     <div className="progress-bar">
-      <audio
-        controls
-        id="audio"
-        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-        ref={audio}
-      ></audio>
+      <audio id="audio" ref={audio} preload="metadata" src={trackLink}>
+        {/* {list
+          ? list.map((item: any) => <source key={item.track} src={item.src} />)
+          : ''} */}
+      </audio>
+      {/* <audio id="audio" ref={audio} preload="metadata">
+        <source src={list ? list.map((item: any) => console.log(item)) : ''} />
+      </audio> */}
       <div className="song-text">
         <span className="song-artist">ALABAMA</span>•
         <span className="song-name">Kyok</span>
@@ -115,7 +128,7 @@ export const ProgressBar = () => {
         >
           <span
             className="bar-wrapper__knob"
-            style={{ left: `${curPercentage - 2}%` }}
+            style={{ left: `${curPercentage - 1}%` }}
           />
           <ReactTooltip id="bar-wrapper__time">
             {formatSecondsAsTime(barTooltip)}

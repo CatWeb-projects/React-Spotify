@@ -70,12 +70,13 @@ export const ProviderContext = (props: ProviderProps) => {
   const [volume, setVolume] = useState(0.5);
   const [playing, setPlaying] = useState();
   const [clickedTime, setClickedTime] = useState(0);
-  const [active, setActive] = useState<boolean>(true);
+  const [active, setActive] = useState(true);
+  const [currentVolume, setCurrentVolume] = useState(0);
 
   const audio: any = [
     {
       track: 'Lindsey Stirling - The Arena',
-      src: 'lindsey-arena.mp3',
+      src: 'https://www.mboxdrive.com/lindsey-arena.mp3',
       img:
         'https://www.purederekhough.com/wp-content/uploads/2016/06/Derek-Hough-Lindsey-Stirling-Arena-23.jpg',
       avatar:
@@ -85,7 +86,7 @@ export const ProviderContext = (props: ProviderProps) => {
     },
     {
       track: 'eScala - Palladio',
-      src: 'escala-palladio.mp3',
+      src: 'https://www.mboxdrive.com/escala-palladio.mp3',
       img: 'https://i.ytimg.com/vi/bBwa8nqtris/hqdefault.jpg',
       avatar:
         'https://4.bp.blogspot.com/_R9k1W5urJEM/Sh010Qp7-tI/AAAAAAAACBQ/unqJjKJhvPg/w1200-h630-p-k-no-nu/escala10.jpg',
@@ -94,7 +95,7 @@ export const ProviderContext = (props: ProviderProps) => {
     },
     {
       track: 'Evanscence - Bring Me to Life',
-      src: 'Evanscence - Bring Me to Life.mp3',
+      src: 'https://www.mboxdrive.com/Evanscence-Bring Me to Life.mp3',
       img: 'https://i1.sndcdn.com/artworks-000575750300-d8jycp-t500x500.jpg',
       avatar:
         'https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/646/964/original/3e6283.jpeg?1508949731',
@@ -103,7 +104,7 @@ export const ProviderContext = (props: ProviderProps) => {
     },
     {
       track: 'Two Steps From Hell - Rada',
-      src: 'Two Steps From Hell - Rada.mp3',
+      src: 'https://www.mboxdrive.com/rada.mp3',
       img: 'https://i.ytimg.com/vi/XD6SU_BL9QU/maxresdefault.jpg',
       avatar: 'https://i.ytimg.com/vi/DQb0GE989-4/maxresdefault.jpg',
       artist: 'Two Steps From Hell',
@@ -136,7 +137,9 @@ export const ProviderContext = (props: ProviderProps) => {
         clickedTime,
         setClickedTime,
         active,
-        setActive
+        setActive,
+        currentVolume,
+        setCurrentVolume
       }}
     >
       {children}
