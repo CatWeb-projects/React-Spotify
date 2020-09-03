@@ -66,12 +66,14 @@ export const ProviderContext = (props: ProviderProps) => {
   const [list, setList] = useState([]);
   const [song, setSong] = useState();
   const [currentTime, setCurrentTime] = useState(0);
-  const [durationTime, setDurationTime] = useState(0);
+  const [durationTime, setDurationTime] = useState(1);
   const [volume, setVolume] = useState(0.5);
-  const [playing, setPlaying] = useState();
+  const [playing, setPlaying] = useState(false);
   const [clickedTime, setClickedTime] = useState(0);
-  const [active, setActive] = useState(true);
+  const [active, setActive] = useState(false);
   const [currentVolume, setCurrentVolume] = useState(0);
+  const [audioFiles, setAudioFiles] = useState<string | undefined>('');
+  const [counter, setCounter] = useState<number>(0);
 
   const audio: any = [
     {
@@ -139,7 +141,11 @@ export const ProviderContext = (props: ProviderProps) => {
         active,
         setActive,
         currentVolume,
-        setCurrentVolume
+        setCurrentVolume,
+        audioFiles,
+        setAudioFiles,
+        counter,
+        setCounter
       }}
     >
       {children}

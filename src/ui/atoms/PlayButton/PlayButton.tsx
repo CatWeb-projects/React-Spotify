@@ -1,8 +1,8 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Context } from 'Context/Context';
 
-export const PlayButton = () => {
-  const { setPlaying, active, setActive } = useContext(Context);
+export const PlayButton = (props: any) => {
+  const { playing, setPlaying, active, setActive } = useContext(Context);
   const changes = () => {
     setActive(!active);
     if (active) {
@@ -13,6 +13,13 @@ export const PlayButton = () => {
       console.log('pause');
     }
   };
+  useEffect(() => {
+    if (playing) {
+      setActive(false);
+    } else {
+      setActive(true);
+    }
+  }, [playing]);
   return (
     <div className="play-button">
       {active ? (

@@ -5,20 +5,25 @@ import { CircleButton } from 'ui/atoms/CircleButton/CircleButton';
 import 'ui/organims/SongProfile/SongProfile.scss';
 
 export const SongProfile = () => {
-  const { list, song, setSong } = useContext<any>(Context);
+  const { list, song, setSong, audioFiles, setAudioFiles } = useContext<any>(
+    Context
+  );
 
   const match = useParams<{ name: string }>();
   useEffect(() => {
-    const aSong = list.filter((item: any) =>
+    list.filter((item: any) =>
       item.track === match.name ? setSong(item) : false
     );
-  }, [list]);
+    list.filter((item: any) =>
+      item.track === match.name ? setAudioFiles(item.src) : false
+    );
+  }, [list, match]);
 
   return (
     <div className="profile">
       <div className="profile__img">
         <img src={song ? song.img : ''} alt="" />
-        <CircleButton />
+        <CircleButton src={song ? song.src : ''} />
       </div>
       <div className="profile__info">
         <span>Explicit</span>

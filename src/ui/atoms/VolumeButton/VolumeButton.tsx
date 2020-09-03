@@ -41,7 +41,7 @@ export const VolumeButton = () => {
       </button>
       <ReactTooltip
         id="volume"
-        overridePosition={() => ({ left: 617, top: 2 })}
+        overridePosition={() => ({ left: 0, top: 0 })}
         backgroundColor={'white'}
         className="volume-tooltip"
         clickable={true}

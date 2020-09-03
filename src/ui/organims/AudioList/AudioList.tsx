@@ -15,10 +15,10 @@ export const AudioList = () => {
       </div>
       <ul className="audio-list">
         {list &&
-          list.map((item: any) => (
+          list.map((item: any, i: number) => (
             <li key={item.track}>
-              <CircleButton />
-              <Link to={`/${item.track}`}>{item.track}</Link>
+              <CircleButton src={item.src} id={i} />
+              <Link to={`/${item.track}`}>{item.track} </Link>
               <span>{item.duration}</span>
             </li>
           ))}

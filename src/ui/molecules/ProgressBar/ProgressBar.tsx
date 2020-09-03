@@ -12,16 +12,20 @@ export const ProgressBar = () => {
     setDurationTime,
     volume,
     playing,
+    setPlaying,
     clickedTime,
-    setClickedTime
+    setClickedTime,
+    audioFiles,
+    counter,
+    setCounter,
+    setAudioFiles
   } = useContext<any>(Context);
   const [barTooltip, setBarTooltip] = useState<number>(0);
-  const [trackLink, setTrackLink] = useState<any>([]);
 
   const audio: any = useRef(null);
+  const current: any = audio.current;
   useEffect(() => {
     const current: any = audio.current;
-    const audioSrc = current.innerHTML;
     current.ontimeupdate = () => {
       let seconds = current.currentTime;
       setCurrentTime(seconds.toFixed());
@@ -40,6 +44,28 @@ export const ProgressBar = () => {
       setClickedTime(0);
     }
   }, [currentTime, volume, playing, barTooltip, clickedTime]);
+
+  const files = [
+    'https://www.mboxdrive.com/lindsey-arena.mp3',
+    'https://www.mboxdrive.com/escala-palladio.mp3',
+    'https://www.mboxdrive.com/Evanscence-Bring Me to Life.mp3',
+    'https://www.mboxdrive.com/rada.mp3'
+  ];
+  let keys: any = Object.keys(files);
+  const endOfSong = async () => {
+    if (currentTime > 10 && currentTime === durationTime) {
+      console.log('end of song');
+      if (counter === files.length - 1) {
+        await current.play();
+        setCounter(0);
+        setAudioFiles(files[keys[0]]);
+      } else {
+        setCounter((count: number) => count + 1);
+        setAudioFiles(files[keys[counter + 1]]);
+        setPlaying(true);
+      }
+    }
+  };
 
   //Drag pointer of the player
   const calcClickedTime = (e: { pageX: number }) => {
@@ -92,24 +118,16 @@ export const ProgressBar = () => {
     });
   };
 
-  useEffect(() => {
-    for (let track of list) {
-      setTrackLink(track.src);
-      console.log(track.src);
-    }
-    console.log(trackLink);
-  }, [list, trackLink]);
-
   return (
     <div className="progress-bar">
-      <audio id="audio" ref={audio} preload="metadata" src={trackLink}>
-        {/* {list
-          ? list.map((item: any) => <source key={item.track} src={item.src} />)
-          : ''} */}
-      </audio>
-      {/* <audio id="audio" ref={audio} preload="metadata">
-        <source src={list ? list.map((item: any) => console.log(item)) : ''} />
-      </audio> */}
+      <audio
+        autoPlay
+        id="audio"
+        ref={audio}
+        preload="metadata"
+        src={audioFiles}
+        onEnded={endOfSong}
+      ></audio>
       <div className="song-text">
         <span className="song-artist">ALABAMA</span>•
         <span className="song-name">Kyok</span>

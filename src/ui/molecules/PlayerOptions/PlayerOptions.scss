@@ -19,16 +19,27 @@
     background-color: #eaeaea;
   }
 }
-.volume-option {
+.volume-option,
+.repeat-option,
+.shuffle-option {
   position: relative;
 }
 .volume-tooltip {
-  left: -88px !important;
+  left: -86px !important;
   top: -30px !important;
   position: absolute;
   width: 200px;
   background-color: #fff;
   border: 1px solid #92929d !important;
+}
+.repeat-tooltip,
+.shuffle-tooltip {
+  position: absolute;
+  left: -86px !important;
+  top: -30px !important;
+  position: absolute;
+  width: 200px;
+  text-align: center;
 }
 .svg_volume {
   width: 18px;
@@ -54,6 +65,31 @@
   button:hover {
     background: none;
   }
+}
+.svg_repeat {
+  display: flex;
+  align-items: center;
+  width: 15px;
+  color: black;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 0;
+  vertical-align: top;
+  margin: 0 auto;
+  color: black;
+}
+
+.svg_repeat_active {
+  color: #ef5466;
+  display: flex;
+  align-items: center;
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 0;
+  vertical-align: top;
+  margin: 0 auto;
 }
 
 input[type='range'] {
