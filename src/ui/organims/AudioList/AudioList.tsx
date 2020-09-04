@@ -1,11 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { ResumeButton } from 'ui/atoms/ResumeButton/ResumeButton';
 import { CircleButton } from 'ui/atoms/CircleButton/CircleButton';
-import { Context } from 'Context/Context';
+import { list } from 'Context/Context';
 import { Link } from 'react-router-dom';
 
 export const AudioList = () => {
-  const { list } = useContext<any>(Context);
+  const classType = '';
+  const typeCircleButton = '';
+
   return (
     <div className="music">
       <ResumeButton />
@@ -14,10 +16,16 @@ export const AudioList = () => {
         <span>L.</span>
       </div>
       <ul className="audio-list">
-        {list &&
+        {[...list] &&
           list.map((item: any, i: number) => (
-            <li key={item.track}>
-              <CircleButton src={item.src} id={i} />
+            <li key={i}>
+              <CircleButton
+                src={item.src}
+                id={i}
+                item={item}
+                classType={classType}
+                type={typeCircleButton}
+              />
               <Link to={`/${item.track}`}>{item.track} </Link>
               <span>{item.duration}</span>
             </li>

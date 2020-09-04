@@ -1,9 +1,36 @@
-import React from 'react';
+import React, { useContext, useRef, useEffect, useState } from 'react';
+import { Context, list } from 'Context/Context';
 
 export const NextButton = () => {
+  const {
+    setPlaying,
+    counter,
+    setCounter,
+    setAudioFiles,
+    files,
+    setFiles
+  } = useContext<any>(Context);
+
+  useEffect(() => {
+    setFiles(list.map((item: any) => item.src));
+  }, []);
+
+  let keys: any = Object.keys(files);
+  const nextSong = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    if (counter === files.length - 1) {
+      setCounter(0);
+      setAudioFiles(files[keys[0]]);
+    } else {
+      setCounter((count: number) => count + 1);
+      setAudioFiles(files[keys[counter + 1]]);
+      setPlaying(true);
+    }
+  };
+
   return (
     <div className="next-button">
-      <button>
+      <button onClick={nextSong}>
         <svg
           className="svg-icon svg-icon-next"
           focusable="false"

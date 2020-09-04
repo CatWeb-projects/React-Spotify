@@ -1,9 +1,39 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { Context, list } from 'Context/Context';
 
 export const PrevButton = () => {
+  const {
+    setPlaying,
+    counter,
+    setCounter,
+    setAudioFiles,
+    files,
+    setFiles
+  } = useContext<any>(Context);
+
+  useEffect(() => {
+    setFiles(list.map((item: any) => item.src));
+  }, []);
+
+  useEffect(() => {
+    setFiles(list.map((item: any) => item.src));
+  }, []);
+  let keys: any = Object.keys(files);
+  const prevSong = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    if (counter === 0) {
+      setCounter(files.length - 1);
+      setAudioFiles(files[keys[files.length - 1]]);
+    } else {
+      setCounter((count: number) => count - 1);
+      setAudioFiles(files[keys[counter - 1]]);
+      setPlaying(true);
+    }
+  };
+
   return (
     <div className="prev-button">
-      <button>
+      <button onClick={prevSong}>
         <svg
           className="svg-icon svg-icon-prev"
           focusable="false"

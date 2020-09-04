@@ -12,6 +12,7 @@
   svg {
     fill: #fff;
     border-radius: 50%;
+    margin-top: 2px;
   }
 }
 .audio-list {
@@ -33,4 +34,39 @@
   a:hover {
     color: #ca2a36;
   }
+}
+.circle-button-hover {
+  background-image: url('http://cdns-files.dzcdn.net/cache/slash/images/common/animated/equalizer/12x12/inverse.1ed354e01b9e97207f6ac710e6c23eaa.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.circle-button-hover:hover {
+  background-image: url('https://i.ibb.co/WkFhTyw/pause.png');
+  background-size: cover;
+  z-index: 3;
+  background-color: black;
+}
+.circle-profile {
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  width: 35px !important;
+  height: 35px !important;
+  background-color: #fff !important;
+  svg {
+    fill: #000;
+  }
+}
+.circle-button-hover_svg-play {
+  background-image: url('https://cdns-files.dzcdn.net/cache/slash/images/common/animated/equalizer/12x12/dark.ee54bef1c488b8caebde2b4915d0fc5d.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18px;
+}
+.circle-button-hover_svg-play:hover {
+  background-image: url('https://www.iconninja.com/files/786/206/557/pause-icon.png');
+  background-size: 24px;
+  z-index: 3;
+  background-color: #fff;
 }

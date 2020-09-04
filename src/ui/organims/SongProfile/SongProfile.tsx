@@ -1,14 +1,13 @@
 import React, { useContext, useEffect } from 'react';
-import { Context } from 'Context/Context';
+import { Context, list } from 'Context/Context';
 import { useParams } from 'react-router-dom';
 import { CircleButton } from 'ui/atoms/CircleButton/CircleButton';
 import 'ui/organims/SongProfile/SongProfile.scss';
 
 export const SongProfile = () => {
-  const { list, song, setSong, audioFiles, setAudioFiles } = useContext<any>(
-    Context
-  );
-
+  const { song, setSong, setAudioFiles } = useContext<any>(Context);
+  const classType = '_svg-play';
+  const typeCircleButton = 'profile';
   const match = useParams<{ name: string }>();
   useEffect(() => {
     list.filter((item: any) =>
@@ -17,13 +16,17 @@ export const SongProfile = () => {
     list.filter((item: any) =>
       item.track === match.name ? setAudioFiles(item.src) : false
     );
-  }, [list, match]);
+  }, [list, song, match]);
 
   return (
     <div className="profile">
       <div className="profile__img">
         <img src={song ? song.img : ''} alt="" />
-        <CircleButton src={song ? song.src : ''} />
+        <CircleButton
+          src={song ? song.src : ''}
+          classType={classType}
+          type={typeCircleButton}
+        />
       </div>
       <div className="profile__info">
         <span>Explicit</span>
