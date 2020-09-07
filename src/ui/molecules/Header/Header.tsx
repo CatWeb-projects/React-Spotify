@@ -1,7 +1,7 @@
 import React from 'react';
 import 'ui/molecules/Header/Header.scss';
 
-export const Header = ({ children }: any) => {
+export const Header = () => {
   return (
     <div className="nav-links">
       <div className="nav-links__logo">

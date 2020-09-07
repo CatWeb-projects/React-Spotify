@@ -1,5 +1,6 @@
-import React, { useContext, useRef, useEffect, useState } from 'react';
-import { Context, list } from 'Context/Context';
+import React, { useContext, useEffect, useCallback } from 'react';
+import { Context, list, Audio } from 'Context/Context';
+import './NextButton.scss';
 
 export const NextButton = () => {
   const {
@@ -9,24 +10,27 @@ export const NextButton = () => {
     setAudioFiles,
     files,
     setFiles
-  } = useContext<any>(Context);
+  } = useContext(Context);
 
   useEffect(() => {
-    setFiles(list.map((item: any) => item.src));
+    setFiles(list.map((item) => item.src));
   }, []);
 
-  let keys: any = Object.keys(files);
-  const nextSong = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    if (counter === files.length - 1) {
-      setCounter(0);
-      setAudioFiles(files[keys[0]]);
-    } else {
-      setCounter((count: number) => count + 1);
-      setAudioFiles(files[keys[counter + 1]]);
-      setPlaying(true);
-    }
-  };
+  const nextSong = useCallback(
+    (e: { preventDefault: () => void }) => {
+      let keys: any = Object.keys(files);
+      e.preventDefault();
+      if (counter === files.length - 1) {
+        setCounter(0);
+        setAudioFiles(files[keys[0]]);
+      } else {
+        setCounter((count: number) => count + 1);
+        setAudioFiles(files[keys[counter + 1]]);
+        setPlaying(true);
+      }
+    },
+    [files, counter, setCounter, setAudioFiles, setPlaying]
+  );
 
   return (
     <div className="next-button">

@@ -1,11 +1,16 @@
 import React from 'react';
-import { ResumeButton } from 'ui/atoms/ResumeButton/ResumeButton';
+import { ResumeButton } from './ResumeButton';
+import { ProviderContext } from 'Context/Context';
 
 export default {
-  title: 'ResumeButton',
+  title: 'Atoms/ResumeButton',
   component: ResumeButton
 };
 
-export const regular = ({ children }: any): React.ReactElement => (
-  <ResumeButton>{children}</ResumeButton>
-);
+export const regular = () => {
+  return (
+    <ProviderContext>
+      <ResumeButton />
+    </ProviderContext>
+  );
+};

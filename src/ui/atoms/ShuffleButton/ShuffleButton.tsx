@@ -1,12 +1,35 @@
-import React from 'react';
+import React, { useState, useContext, useEffect, useCallback } from 'react';
 import ReactTooltip from 'react-tooltip';
+import { Context } from 'Context/Context';
 
 export const ShuffleButton = () => {
+  const [active, setActive] = useState<boolean>(false);
+  const { setShuffle, currentTime, shuffle } = useContext(Context);
+  const changes = useCallback(() => {
+    setActive(!active);
+    console.log(shuffle);
+    console.log(active);
+  }, [active, shuffle]);
+
+  useEffect(() => {
+    if (active) {
+      setShuffle(true);
+    } else {
+      setShuffle(false);
+    }
+    // eslint-disable-next-line
+  }, [active, currentTime]);
+
   return (
     <div className="shuffle-option">
-      <button aria-label="Turn on Shuffle" data-tip="" data-for="shuffle">
+      <button
+        aria-label="Turn on Shuffle"
+        data-tip=""
+        data-for="shuffle"
+        onClick={changes}
+      >
         <svg
-          className="svg-icon svg-icon-shuffle"
+          className={`${active ? 'svg_shuffle_active' : 'svg_shuffle'}`}
           focusable="false"
           height="1em"
           width="1em"
@@ -26,7 +49,7 @@ export const ShuffleButton = () => {
         className="shuffle-tooltip"
         overridePosition={() => ({ left: 0, top: 0 })}
       >
-        <span>Turn on Shuffle</span>
+        <span> {!active ? 'Turn on Shuffle' : 'Turn off Shuffle'}</span>
       </ReactTooltip>
     </div>
   );

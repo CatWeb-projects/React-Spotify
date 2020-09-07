@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect, useCallback } from 'react';
 import { Context } from 'Context/Context';
 import 'ui/atoms/CircleButton//CircleButton.scss';
 
@@ -10,17 +10,18 @@ export type ButtonProps = {
   black?: string;
 };
 
-export const CircleButton = (props: any) => {
+export const CircleButton = (props: ButtonProps) => {
   const {
     audioFiles,
     playing,
     setPlaying,
-    setSong,
     setAudioFiles,
-    setCounter
+    setCounter,
+    setCurrentSong
   } = useContext(Context);
-  const [active, setActive] = useState<any>(false);
-  const changes = () => {
+  const [active, setActive] = useState(false);
+
+  const changes = useCallback(() => {
     setActive(!active);
     if (!active) {
       setAudioFiles(props.src);
@@ -31,11 +32,11 @@ export const CircleButton = (props: any) => {
     } else {
       setPlaying(false);
     }
-  };
+  }, [active]);
 
   useEffect(() => {
     if (audioFiles === props.src) {
-      setSong(true);
+      setCurrentSong(true);
     }
   }, [audioFiles]);
 

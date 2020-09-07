@@ -1,4 +1,10 @@
-import React, { useRef, useEffect, useContext, useState } from 'react';
+import React, {
+  useRef,
+  useEffect,
+  useContext,
+  useState,
+  useCallback
+} from 'react';
 import { Context, list } from 'Context/Context';
 import ReactTooltip from 'react-tooltip';
 import 'ui/molecules/ProgressBar/ProgressBar.scss';
@@ -21,18 +27,37 @@ export const ProgressBar = () => {
     setAudioFiles,
     files,
     setFiles,
-    repeatAll
-  } = useContext<any>(Context);
+    repeatAll,
+    profile,
+    setSong,
+    shuffle,
+    repeatOne
+  } = useContext(Context);
   const [barTooltip, setBarTooltip] = useState<number>(0);
-
-  useEffect(() => {
-    setFiles(list.map((item: any) => item.src));
-  }, []);
-
+  const [random, setRandom] = useState<number>(1);
+  const [prevSong, setPrevSong] = useState<number>();
   const audio: any = useRef(null);
   const current: any = audio.current;
+
   useEffect(() => {
-    const current: any = audio.current;
+    if (profile) {
+      (async function anyNameFunction() {
+        await current.load();
+        await current.pause();
+      })();
+    }
+  }, [profile]);
+
+  useEffect(() => {
+    list.filter((item) => (item.src === audioFiles ? setSong(item) : false));
+  }, [currentTime, audioFiles]);
+
+  useEffect(() => {
+    setFiles(list.map((item) => item.src));
+  }, []);
+
+  useEffect(() => {
+    const current = audio.current;
     current.ontimeupdate = () => {
       let seconds = current.currentTime;
       setCurrentTime(seconds.toFixed());
@@ -52,10 +77,10 @@ export const ProgressBar = () => {
     }
   }, [currentTime, volume, playing, barTooltip, clickedTime]);
 
-  let keys: any = Object.keys(files);
-  const endOfSong = async () => {
-    if (repeatAll) {
-      if (currentTime > 10 && currentTime === durationTime) {
+  const endOfSong = useCallback(async () => {
+    let keys: any = Object.keys(files);
+    if (currentTime > 10 && currentTime === durationTime) {
+      if (repeatAll && shuffle === false) {
         console.log('end of song');
         if (counter === files.length - 1) {
           await current.play();
@@ -64,17 +89,46 @@ export const ProgressBar = () => {
         } else {
           setCounter((count: number) => count + 1);
           setAudioFiles(files[keys[counter + 1]]);
-          setPlaying(true);
+          setPrevSong(counter + 1);
         }
-        if (counter > files.length - 1) {
-          setCounter(0);
-          setAudioFiles(files[keys[0]]);
+      } else if (repeatAll && shuffle === true) {
+        if (random === prevSong) {
+          await current.play();
+          setRandom(Math.floor(Math.random() * list.length));
+          setCounter(random);
+          setAudioFiles(files[keys[random + 1]]);
+        } else {
+          await current.play();
+          setRandom(Math.floor(Math.random() * list.length));
+          setCounter(random);
+          setAudioFiles(files[keys[random]]);
+          setPrevSong(random);
         }
-      } else {
+      } else if (counter === files.length - 1) {
+        await current.load();
+        await current.pause();
         setPlaying(false);
+      } else {
+        setCounter((count: number) => count + 1);
+        setAudioFiles(files[keys[counter + 1]]);
+        setPrevSong(counter + 1);
       }
     }
-  };
+  }, [
+    files,
+    audioFiles,
+    setAudioFiles,
+    currentTime,
+    random,
+    setRandom,
+    counter,
+    random,
+    setPrevSong,
+    durationTime,
+    repeatAll,
+    shuffle,
+    playing
+  ]);
 
   //Drag pointer of the player
   const calcClickedTime = (e: { pageX: number }) => {
@@ -132,6 +186,7 @@ export const ProgressBar = () => {
     <div className="progress-bar">
       <audio
         autoPlay
+        loop={repeatOne}
         id="audio"
         ref={audio}
         preload="metadata"

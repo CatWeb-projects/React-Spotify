@@ -4,7 +4,7 @@ import { PlayButton } from 'ui/atoms/PlayButton/PlayButton';
 import { NextButton } from 'ui/atoms/NextButton/NextButton';
 import 'ui/molecules/PlayerControls/PlayerControls.scss';
 
-export const PlayerControls = (props: any) => {
+export const PlayerControls = () => {
   return (
     <div className="player-controls">
       <PrevButton />

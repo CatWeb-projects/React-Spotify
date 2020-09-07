@@ -1,18 +1,24 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useCallback } from 'react';
 import { Context } from 'Context/Context';
 
-export const PlayButton = (props: any) => {
-  const { playing, setPlaying, active, setActive } = useContext(Context);
-  const changes = () => {
-    setActive(!active);
+export const PlayButton = () => {
+  const { playing, setPlaying, active, setActive, audioFiles } = useContext(
+    Context
+  );
+
+  const changes = useCallback(() => {
+    if (audioFiles) {
+      setActive(!active);
+    } else {
+      return;
+    }
     if (active) {
       setPlaying(true);
-      console.log('play');
     } else {
       setPlaying(false);
-      console.log('pause');
     }
-  };
+  }, [audioFiles, active, setPlaying]);
+
   useEffect(() => {
     if (playing) {
       setActive(false);

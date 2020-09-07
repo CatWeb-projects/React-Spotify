@@ -2,10 +2,12 @@ import React from 'react';
 import { CircleButton } from './CircleButton';
 
 export default {
-  title: 'CircleButton',
+  title: 'Atoms/CircleButton',
   component: CircleButton
 };
 
-export const regular = ({ children }: any): React.ReactElement => (
-  <CircleButton>{children}</CircleButton>
-);
+export const regular = () => {
+  const classType = '';
+  const typeCircleButton = '';
+  return <CircleButton classType={classType} type={typeCircleButton} />;
+};

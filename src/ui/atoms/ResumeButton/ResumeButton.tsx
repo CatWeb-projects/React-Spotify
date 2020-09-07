@@ -1,21 +1,24 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext, useCallback } from 'react';
 import { Context } from 'Context/Context';
 import 'ui/atoms/ResumeButton/ResumeButton.scss';
 
-export const ResumeButton = ({ children }: any) => {
-  const { setPlaying, active, setActive } = useContext(Context);
-
+export const ResumeButton = () => {
+  const { setPlaying, active, setActive, audioFiles } = useContext(Context);
   const type = 'resume';
-  const changes = () => {
-    setActive(!active);
+
+  const changes = useCallback(() => {
+    if (audioFiles) {
+      setActive(!active);
+    } else {
+      return;
+    }
     if (active) {
       setPlaying(true);
-      console.log('play');
     } else {
       setPlaying(false);
-      console.log('pause');
     }
-  };
+  }, [audioFiles, active, setPlaying]);
+
   return (
     <div className="resume-button-div">
       {active ? (

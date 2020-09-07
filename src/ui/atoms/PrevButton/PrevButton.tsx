@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useCallback } from 'react';
 import { Context, list } from 'Context/Context';
 
 export const PrevButton = () => {
@@ -9,27 +9,31 @@ export const PrevButton = () => {
     setAudioFiles,
     files,
     setFiles
-  } = useContext<any>(Context);
+  } = useContext(Context);
 
   useEffect(() => {
-    setFiles(list.map((item: any) => item.src));
+    setFiles(list.map((item) => item.src));
   }, []);
 
   useEffect(() => {
-    setFiles(list.map((item: any) => item.src));
+    setFiles(list.map((item) => item.src));
   }, []);
-  let keys: any = Object.keys(files);
-  const prevSong = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    if (counter === 0) {
-      setCounter(files.length - 1);
-      setAudioFiles(files[keys[files.length - 1]]);
-    } else {
-      setCounter((count: number) => count - 1);
-      setAudioFiles(files[keys[counter - 1]]);
-      setPlaying(true);
-    }
-  };
+
+  const prevSong = useCallback(
+    (e: { preventDefault: () => void }) => {
+      let keys: any = Object.keys(files);
+      e.preventDefault();
+      if (counter === 0) {
+        setCounter(files.length - 1);
+        setAudioFiles(files[keys[files.length - 1]]);
+      } else {
+        setCounter((count: number) => count - 1);
+        setAudioFiles(files[keys[counter - 1]]);
+        setPlaying(true);
+      }
+    },
+    [counter, setCounter, files, setAudioFiles, setPlaying]
+  );
 
   return (
     <div className="prev-button">

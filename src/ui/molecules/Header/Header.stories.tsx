@@ -1,11 +1,16 @@
 import React from 'react';
-import { Header } from 'ui/molecules/Header/Header';
+import { Header } from './Header';
+import { ProviderContext } from 'Context/Context';
 
 export default {
-  title: 'Header',
+  title: 'Molecules/Header',
   component: Header
 };
 
-export const regular = ({ children }: any): React.ReactElement => (
-  <Header>{children}</Header>
-);
+export const regular = () => {
+  return (
+    <ProviderContext>
+      <Header />
+    </ProviderContext>
+  );
+};

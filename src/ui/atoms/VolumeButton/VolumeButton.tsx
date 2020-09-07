@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect, useCallback } from 'react';
 import ReactTooltip from 'react-tooltip';
 import { Context } from 'Context/Context';
 import { VolumeBar } from '../VolumeBar/VolumeBar';
@@ -8,19 +8,16 @@ export const VolumeButton = () => {
   const { volume, setVolume } = useContext(Context);
   const { currentVolume, setCurrentVolume } = useContext(Context);
 
-  const changes = () => {
+  const changes = useCallback(() => {
     setActive(!active);
     if (active) {
       setCurrentVolume(volume);
       setVolume(0);
-      console.log(currentVolume, 'current on');
-      console.log(volume, 'volume on');
     } else {
       setVolume(currentVolume);
-      console.log(currentVolume, 'current off');
-      console.log(volume, 'volume off');
     }
-  };
+  }, [active, setActive, setCurrentVolume, setVolume]);
+
   useEffect(() => {
     if (volume > 0 && active === false) {
       setActive(true);

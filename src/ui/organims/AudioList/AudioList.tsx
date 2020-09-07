@@ -16,13 +16,12 @@ export const AudioList = () => {
         <span>L.</span>
       </div>
       <ul className="audio-list">
-        {[...list] &&
-          list.map((item: any, i: number) => (
+        {list &&
+          list.map((item, i: number) => (
             <li key={i}>
               <CircleButton
                 src={item.src}
                 id={i}
-                item={item}
                 classType={classType}
                 type={typeCircleButton}
               />

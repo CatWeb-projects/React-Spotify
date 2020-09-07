@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useRef, useCallback } from 'react';
 import { Context } from 'Context/Context';
 
 type active = {
@@ -6,13 +6,14 @@ type active = {
 };
 export const VolumeBar = (props: active) => {
   const { setVolume } = useContext(Context);
+  const inputValue = useRef(null);
 
-  const getValue = () => {
+  const getValue = useCallback(() => {
     const getInput: any = inputValue.current;
     const getClear = Math.floor(getInput.value);
     setVolume(getClear / 10);
-  };
-  const inputValue = useRef(null);
+  }, [setVolume]);
+
   return (
     <input
       type="range"

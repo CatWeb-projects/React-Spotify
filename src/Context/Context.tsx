@@ -1,16 +1,18 @@
 import React, { useState, useEffect, ReactNode } from 'react';
 
-interface Audio {
+export interface Audio {
   track: string;
+  title: string;
   src: string;
   img: string;
   artist: string;
   duration: string;
+  avatar: string;
 }
 
 export interface Props {
-  list: Audio;
   song: Audio;
+  currentSong: boolean;
   playing: boolean;
   volume: number;
   currentTime: number;
@@ -18,8 +20,14 @@ export interface Props {
   clickedTime: number;
   currentVolume: number;
   active: boolean;
+  audioFiles: string | undefined;
+  counter: number;
+  files: string[];
+  shuffle: boolean;
+  repeatOne: boolean;
+  repeatAll: boolean;
+  profile: boolean;
   setSong: React.Dispatch<React.SetStateAction<Audio>>;
-  setList: React.Dispatch<React.SetStateAction<Audio>>;
   setCurrentTime: React.Dispatch<React.SetStateAction<number>>;
   setDurationTime: React.Dispatch<React.SetStateAction<number>>;
   setClickedTime: React.Dispatch<React.SetStateAction<number>>;
@@ -27,6 +35,14 @@ export interface Props {
   setVolume: React.Dispatch<React.SetStateAction<number>>;
   setCurrentVolume: React.Dispatch<React.SetStateAction<number>>;
   setActive: React.Dispatch<React.SetStateAction<boolean>>;
+  setAudioFiles: React.Dispatch<React.SetStateAction<string | undefined>>;
+  setCounter: React.Dispatch<React.SetStateAction<number>>;
+  setFiles: React.Dispatch<React.SetStateAction<string[]>>;
+  setProfile: React.Dispatch<React.SetStateAction<boolean>>;
+  setShuffle: React.Dispatch<React.SetStateAction<boolean>>;
+  setRepeatOne: React.Dispatch<React.SetStateAction<boolean>>;
+  setRepeatAll: React.Dispatch<React.SetStateAction<boolean>>;
+  setCurrentSong: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 interface ProviderProps {
@@ -34,13 +50,14 @@ interface ProviderProps {
 }
 
 const defaultValue = {
-  list: [],
   song: {
     track: '',
     src: '',
     img: '',
     artist: '',
-    duration: ''
+    duration: '',
+    avatar: '',
+    title: ''
   },
   playing: false,
   currentTime: 0,
@@ -48,8 +65,15 @@ const defaultValue = {
   clickedTime: 0,
   volume: 0.5,
   currentVolume: 0,
-  active: true,
-  setList: () => {},
+  active: false,
+  audioFiles: '',
+  counter: 0,
+  files: [''],
+  shuffle: false,
+  repeatOne: false,
+  repeatAll: false,
+  profile: false,
+  currentSong: false,
   setSong: () => {},
   setCurrentTime: () => {},
   setDurationTime: () => {},
@@ -57,12 +81,20 @@ const defaultValue = {
   setPlaying: () => {},
   setVolume: () => {},
   setCurrentVolume: () => {},
-  setActive: () => {}
+  setActive: () => {},
+  setAudioFiles: () => {},
+  setCounter: () => {},
+  setFiles: () => {},
+  setShuffle: () => {},
+  setRepeatOne: () => {},
+  setRepeatAll: () => {},
+  setProfile: () => {},
+  setCurrentSong: () => {}
 };
 
-export const Context = React.createContext<any>(defaultValue);
+export const Context = React.createContext<Props>(defaultValue);
 
-export const list: any = [
+export const list = [
   {
     track: 'Lindsey Stirling - The Arena',
     title: 'The Arena',
@@ -151,7 +183,8 @@ export const list: any = [
     title: 'From Paris To Berlin',
     src:
       'https://www.mboxdrive.com/DJ Aligator - 14 - Infernal - From Paris To Berlin (DJ Aligator meets Mr. President club mix).mp3',
-    img: 'https://m.media-amazon.com/images/I/61v2x52daCL._SS500_.jpg',
+    img:
+      'https://media.hitparade.ch/cover/big/infernal-from_paris_to_berlin_s_5.jpg',
     avatar: 'https://www.mtvpersian.net/covers/thumbs2/20131_20131_400.jpg',
     artist: 'Dj Aligator',
     duration: '6:06'
@@ -168,29 +201,39 @@ export const list: any = [
 ];
 
 export const ProviderContext = (props: ProviderProps) => {
-  const [list, setList] = useState([]);
-  const [song, setSong] = useState();
+  const [song, setSong] = useState({
+    track: '',
+    src: '',
+    img: '',
+    artist: '',
+    duration: '',
+    avatar: '',
+    title: ''
+  });
   const [currentTime, setCurrentTime] = useState(0);
-  const [durationTime, setDurationTime] = useState(1);
+  const [durationTime, setDurationTime] = useState(0);
   const [volume, setVolume] = useState(0.5);
   const [playing, setPlaying] = useState(false);
   const [clickedTime, setClickedTime] = useState(0);
   const [active, setActive] = useState(false);
   const [currentVolume, setCurrentVolume] = useState(0);
   const [audioFiles, setAudioFiles] = useState<string | undefined>('');
-  const [counter, setCounter] = useState<number>(0);
-  const [files, setFiles] = useState<any[]>(['']);
-  const [repeatOne, setRepeatOne] = useState<any>();
-  const [repeatAll, setRepeatAll] = useState<any>();
+  const [counter, setCounter] = useState(0);
+  const [files, setFiles] = useState(['']);
+  const [repeatOne, setRepeatOne] = useState(false);
+  const [repeatAll, setRepeatAll] = useState(false);
+  const [profile, setProfile] = useState(false);
+  const [shuffle, setShuffle] = useState(false);
+  const [currentSong, setCurrentSong] = useState(false);
 
   const { children } = props;
   return (
     <Context.Provider
       value={{
-        list,
-        setList,
         song,
         setSong,
+        currentSong,
+        setCurrentSong,
         currentTime,
         setCurrentTime,
         durationTime,
@@ -214,7 +257,11 @@ export const ProviderContext = (props: ProviderProps) => {
         repeatOne,
         setRepeatOne,
         repeatAll,
-        setRepeatAll
+        setRepeatAll,
+        profile,
+        setProfile,
+        shuffle,
+        setShuffle
       }}
     >
       {children}
