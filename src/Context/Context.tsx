@@ -61,7 +61,7 @@ const defaultValue = {
   },
   playing: false,
   currentTime: 0,
-  durationTime: 0,
+  durationTime: 1,
   clickedTime: 0,
   volume: 0.5,
   currentVolume: 0,
@@ -197,6 +197,27 @@ export const list = [
     avatar: 'https://i.ytimg.com/vi/hicCCkeobQQ/maxresdefault.jpg',
     artist: '5Sta Family',
     duration: '3:45'
+  },
+  {
+    track: 'Ava Max - Kings & Queens',
+    title: 'Kings & Queens',
+    src: 'https://media1.vocaroo.com/mp3/1915LLwGXi7b',
+    img: 'https://i.ytimg.com/vi/q6LhCim5y_Y/maxresdefault.jpg',
+    avatar:
+      'https://younghollywood.com/images/stories/avamaxkingsandqueens.jpg',
+    artist: 'Ava Max',
+    duration: '2:42'
+  },
+  {
+    track: 'Johann Sebastian Bach - Badinerie',
+    title: 'Badinerie',
+    src: 'https://media1.vocaroo.com/mp3/18ZBT9oZaf95',
+    img:
+      'https://d1iiivw74516uk.cloudfront.net/eyJidWNrZXQiOiJwcmVzdG8tY292ZXItaW1hZ2VzIiwia2V5IjoiNzAzMjExOS4xLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MzAwfSwianBlZyI6eyJxdWFsaXR5Ijo2NX0sInRvRm9ybWF0IjoianBlZyJ9LCJ0aW1lc3RhbXAiOjE1NDk1MzQyMDl9',
+    avatar:
+      'https://upload.wikimedia.org/wikipedia/commons/6/6a/Johann_Sebastian_Bach.jpg',
+    artist: 'Johann Sebastian Bach',
+    duration: '1:27'
   }
 ];
 
@@ -211,7 +232,7 @@ export const ProviderContext = (props: ProviderProps) => {
     title: ''
   });
   const [currentTime, setCurrentTime] = useState(0);
-  const [durationTime, setDurationTime] = useState(0);
+  const [durationTime, setDurationTime] = useState(1);
   const [volume, setVolume] = useState(0.5);
   const [playing, setPlaying] = useState(false);
   const [clickedTime, setClickedTime] = useState(0);

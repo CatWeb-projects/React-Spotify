@@ -12,6 +12,7 @@ export type ButtonProps = {
 
 export const CircleButton = (props: ButtonProps) => {
   const {
+    counter,
     audioFiles,
     playing,
     setPlaying,
@@ -32,7 +33,7 @@ export const CircleButton = (props: ButtonProps) => {
     } else {
       setPlaying(false);
     }
-  }, [active]);
+  }, [active, audioFiles, counter, playing]);
 
   useEffect(() => {
     if (audioFiles === props.src) {

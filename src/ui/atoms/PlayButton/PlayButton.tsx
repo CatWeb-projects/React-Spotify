@@ -17,7 +17,7 @@ export const PlayButton = () => {
     } else {
       setPlaying(false);
     }
-  }, [audioFiles, active, setPlaying]);
+  }, [audioFiles, active, playing]);
 
   useEffect(() => {
     if (playing) {

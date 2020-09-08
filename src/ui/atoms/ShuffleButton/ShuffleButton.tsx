@@ -4,11 +4,9 @@ import { Context } from 'Context/Context';
 
 export const ShuffleButton = () => {
   const [active, setActive] = useState<boolean>(false);
-  const { setShuffle, currentTime, shuffle } = useContext(Context);
+  const { setShuffle, shuffle } = useContext(Context);
   const changes = useCallback(() => {
     setActive(!active);
-    console.log(shuffle);
-    console.log(active);
   }, [active, shuffle]);
 
   useEffect(() => {
@@ -18,7 +16,7 @@ export const ShuffleButton = () => {
       setShuffle(false);
     }
     // eslint-disable-next-line
-  }, [active, currentTime]);
+  }, [active]);
 
   return (
     <div className="shuffle-option">

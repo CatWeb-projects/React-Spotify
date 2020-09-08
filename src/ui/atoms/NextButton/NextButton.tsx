@@ -1,15 +1,16 @@
 import React, { useContext, useEffect, useCallback } from 'react';
-import { Context, list, Audio } from 'Context/Context';
-import './NextButton.scss';
+import { Context, list } from 'Context/Context';
 
 export const NextButton = () => {
   const {
     setPlaying,
     counter,
     setCounter,
+    audioFiles,
     setAudioFiles,
     files,
-    setFiles
+    setFiles,
+    playing
   } = useContext(Context);
 
   useEffect(() => {
@@ -20,7 +21,11 @@ export const NextButton = () => {
     (e: { preventDefault: () => void }) => {
       let keys: any = Object.keys(files);
       e.preventDefault();
-      if (counter === files.length - 1) {
+      if (counter === 0) {
+        setCounter((count: number) => count);
+        setAudioFiles(files[keys[counter]]);
+        setPlaying(false);
+      } else if (counter === files.length - 1) {
         setCounter(0);
         setAudioFiles(files[keys[0]]);
       } else {
@@ -29,7 +34,7 @@ export const NextButton = () => {
         setPlaying(true);
       }
     },
-    [files, counter, setCounter, setAudioFiles, setPlaying]
+    [files, counter, audioFiles, playing]
   );
 
   return (

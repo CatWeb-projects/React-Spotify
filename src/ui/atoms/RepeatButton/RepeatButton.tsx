@@ -22,7 +22,6 @@ export const RepeatButton = () => {
     } else {
       setRepeatOne(false);
     }
-    console.log(active);
   }, [active, setActive, setRepeatAll, setRepeatOne]);
 
   useEffect(() => {

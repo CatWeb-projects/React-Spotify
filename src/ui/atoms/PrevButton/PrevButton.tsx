@@ -6,9 +6,11 @@ export const PrevButton = () => {
     setPlaying,
     counter,
     setCounter,
+    audioFiles,
     setAudioFiles,
     files,
-    setFiles
+    setFiles,
+    playing
   } = useContext(Context);
 
   useEffect(() => {
@@ -32,7 +34,7 @@ export const PrevButton = () => {
         setPlaying(true);
       }
     },
-    [counter, setCounter, files, setAudioFiles, setPlaying]
+    [files, counter, audioFiles, playing]
   );
 
   return (

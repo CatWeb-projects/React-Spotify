@@ -81,7 +81,6 @@ export const ProgressBar = () => {
     let keys: any = Object.keys(files);
     if (currentTime > 10 && currentTime === durationTime) {
       if (repeatAll && shuffle === false) {
-        console.log('end of song');
         if (counter === files.length - 1) {
           await current.play();
           setCounter(0);
@@ -91,7 +90,7 @@ export const ProgressBar = () => {
           setAudioFiles(files[keys[counter + 1]]);
           setPrevSong(counter + 1);
         }
-      } else if (repeatAll && shuffle === true) {
+      } else if (shuffle === true) {
         if (random === prevSong) {
           await current.play();
           setRandom(Math.floor(Math.random() * list.length));
