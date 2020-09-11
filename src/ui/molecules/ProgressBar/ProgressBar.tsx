@@ -93,12 +93,12 @@ export const ProgressBar = () => {
       } else if (shuffle === true) {
         if (random === prevSong) {
           await current.play();
-          setRandom(Math.floor(Math.random() * list.length));
+          setRandom(Math.floor(Math.random() * list.length - 1));
           setCounter(random);
           setAudioFiles(files[keys[random + 1]]);
         } else {
           await current.play();
-          setRandom(Math.floor(Math.random() * list.length));
+          setRandom(Math.floor(Math.random() * list.length - 1));
           setCounter(random);
           setAudioFiles(files[keys[random]]);
           setPrevSong(random);

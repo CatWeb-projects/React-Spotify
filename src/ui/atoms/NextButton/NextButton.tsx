@@ -10,7 +10,8 @@ export const NextButton = () => {
     setAudioFiles,
     files,
     setFiles,
-    playing
+    playing,
+    profile
   } = useContext(Context);
 
   useEffect(() => {
@@ -21,7 +22,7 @@ export const NextButton = () => {
     (e: { preventDefault: () => void }) => {
       let keys: any = Object.keys(files);
       e.preventDefault();
-      if (counter === 0) {
+      if (counter === 0 && profile === true) {
         setCounter((count: number) => count);
         setAudioFiles(files[keys[counter]]);
         setPlaying(false);
@@ -34,7 +35,7 @@ export const NextButton = () => {
         setPlaying(true);
       }
     },
-    [files, counter, audioFiles, playing]
+    [files, counter, audioFiles, playing, setAudioFiles, setCounter, setPlaying]
   );
 
   return (

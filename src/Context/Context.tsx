@@ -98,7 +98,7 @@ export const list = [
   {
     track: 'Lindsey Stirling - The Arena',
     title: 'The Arena',
-    src: 'https://www.mboxdrive.com/lindsey-arena.mp3',
+    src: 'https://media1.vocaroo.com/mp3/1iMxN8SVgAhf',
     img:
       'https://www.purederekhough.com/wp-content/uploads/2016/06/Derek-Hough-Lindsey-Stirling-Arena-23.jpg',
     avatar:
@@ -109,7 +109,7 @@ export const list = [
   {
     track: 'eScala - Palladio',
     title: 'Palladio',
-    src: 'https://www.mboxdrive.com/escala-palladio.mp3',
+    src: 'https://media1.vocaroo.com/mp3/1aJnotIkkFhX',
     img: 'https://i.ytimg.com/vi/bBwa8nqtris/hqdefault.jpg',
     avatar:
       'https://4.bp.blogspot.com/_R9k1W5urJEM/Sh010Qp7-tI/AAAAAAAACBQ/unqJjKJhvPg/w1200-h630-p-k-no-nu/escala10.jpg',
@@ -119,7 +119,7 @@ export const list = [
   {
     track: 'Evanscence - Bring Me to Life',
     title: 'Bring Me to Life',
-    src: 'https://www.mboxdrive.com/Evanscence-Bring Me to Life.mp3',
+    src: 'https://media1.vocaroo.com/mp3/1epLbGOSdy91',
     img: 'https://i1.sndcdn.com/artworks-000575750300-d8jycp-t500x500.jpg',
     avatar:
       'https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/646/964/original/3e6283.jpeg?1508949731',
@@ -129,7 +129,7 @@ export const list = [
   {
     track: 'Two Steps From Hell - Rada',
     title: 'Rada',
-    src: 'https://www.mboxdrive.com/rada.mp3',
+    src: 'https://media1.vocaroo.com/mp3/13vunI2AwONe',
     img: 'https://i.ytimg.com/vi/XD6SU_BL9QU/maxresdefault.jpg',
     avatar: 'https://i.ytimg.com/vi/DQb0GE989-4/maxresdefault.jpg',
     artist: 'Two Steps From Hell',
@@ -138,8 +138,7 @@ export const list = [
   {
     track: 'Two Steps From Hell - StarSky',
     title: 'StarSky',
-    src:
-      'https://www.mboxdrive.com/Two_Steps_From_Hell_-_Star_Sky_EXTENDED_Remix_by_Kiko10061980_[www.MP3Fiber.com].mp3',
+    src: 'https://media1.vocaroo.com/mp3/19xzaifSY6XY',
     img:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTh4QCGzk0dcDNG7Ot0ehq10cBXFXPKOPh7eA&usqp=CAU',
     avatar: 'https://i.ytimg.com/vi/DQb0GE989-4/maxresdefault.jpg',
@@ -149,8 +148,7 @@ export const list = [
   {
     track: 'Skillet - Not Gonna Die',
     title: 'Not Gonna Die',
-    src:
-      'https://www.mboxdrive.com/skillet_-_not_gonna_die_edit_version_(zaycev.net).mp3',
+    src: 'https://media1.vocaroo.com/mp3/16OQCDcDNCUU',
     img:
       'https://lastfm.freetls.fastly.net/i/u/770x0/9ee07ce19a854fa4b9d6b36295fc702c.jpg',
     avatar: 'https://i1.sndcdn.com/artworks-000283725944-73m4ci-t500x500.jpg',
@@ -160,8 +158,7 @@ export const list = [
   {
     track: 'Skillet - Rise',
     title: 'Rise',
-    src:
-      'https://www.mboxdrive.com/Skillet_-_Rise_lyric_video[www.MP3Fiber.com].mp3',
+    src: 'https://media1.vocaroo.com/mp3/1ds6CxEsio27',
     img:
       'https://i.pinimg.com/originals/d5/72/59/d572596e941decd992ad06c4aa9262aa.png',
     avatar: 'https://i1.sndcdn.com/artworks-000283725944-73m4ci-t500x500.jpg',
@@ -171,7 +168,7 @@ export const list = [
   {
     track: 'The Rasmus - Dead Promises',
     title: 'Dead Promises',
-    src: 'https://www.mboxdrive.com/The Rasmus-Dead Promises.mp3',
+    src: 'https://media1.vocaroo.com/mp3/15rt6q1ebtws',
     img: 'https://i.ytimg.com/vi/yVnewlvqqCc/hqdefault.jpg',
     avatar:
       'https://i.pinimg.com/originals/c8/21/ef/c821ef4fb65cd1fda3cfe6743cdf2e73.jpg',
@@ -181,8 +178,7 @@ export const list = [
   {
     track: 'Dj Aligator - From Paris To Berlin',
     title: 'From Paris To Berlin',
-    src:
-      'https://www.mboxdrive.com/DJ Aligator - 14 - Infernal - From Paris To Berlin (DJ Aligator meets Mr. President club mix).mp3',
+    src: 'https://media1.vocaroo.com/mp3/1jkjZXeUmhhy',
     img:
       'https://media.hitparade.ch/cover/big/infernal-from_paris_to_berlin_s_5.jpg',
     avatar: 'https://www.mtvpersian.net/covers/thumbs2/20131_20131_400.jpg',
@@ -192,7 +188,7 @@ export const list = [
   {
     track: '5Sta Family - Вместе Мы',
     title: 'Вместе Мы',
-    src: 'https://www.mboxdrive.com/5sta_family_-_vmeste_my_(zaycev.net).mp3',
+    src: 'https://media1.vocaroo.com/mp3/1hsYhJHg9mjO',
     img: 'https://i.ytimg.com/vi/87qSqrGariI/maxresdefault.jpg',
     avatar: 'https://i.ytimg.com/vi/hicCCkeobQQ/maxresdefault.jpg',
     artist: '5Sta Family',
