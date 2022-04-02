@@ -6,7 +6,7 @@ export const Header = () => {
     <div className="nav-links">
       <div className="nav-links__logo">
         <a href="/">
-          <img src="/deezer.png" alt="" />
+          <img src="./deezer.png" alt="deezer" />
         </a>
       </div>
     </div>

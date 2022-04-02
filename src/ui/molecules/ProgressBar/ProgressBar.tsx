@@ -199,7 +199,7 @@ export const ProgressBar = () => {
       ></audio>
       <div className="song-text">
         <span className="song-artist">{song ? song.artist : ''}</span>
-        {song ? ` • ` : ''}
+        {song?.title ? ` • ` : ''}
         <span className="song-name">{song ? song.title : ''}</span>
       </div>
       <div className="bar-wrapper">

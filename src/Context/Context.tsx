@@ -98,68 +98,69 @@ export const list = [
   {
     track: 'Lindsey Stirling - The Arena',
     title: 'The Arena',
-    src: 'https://media1.vocaroo.com/mp3/1iMxN8SVgAhf',
+    src: './music/Linsdsey Stirling - The Arena.mp3',
     img: 'https://www.purederekhough.com/wp-content/uploads/2016/06/Derek-Hough-Lindsey-Stirling-Arena-23.jpg',
     avatar:
       'https://i.pinimg.com/originals/89/c7/e5/89c7e51239fa5bc7a0adf2430b034d2a.jpg',
     artist: 'Lindsey Stirling',
-    duration: '4:06'
+    duration: '4:07'
   },
   {
     track: 'eScala - Palladio',
     title: 'Palladio',
-    src: 'https://media1.vocaroo.com/mp3/1aJnotIkkFhX',
+    src: './music/Escala - Palladio.mp3',
     img: 'https://i.ytimg.com/vi/bBwa8nqtris/hqdefault.jpg',
     avatar:
       'https://4.bp.blogspot.com/_R9k1W5urJEM/Sh010Qp7-tI/AAAAAAAACBQ/unqJjKJhvPg/w1200-h630-p-k-no-nu/escala10.jpg',
     artist: 'eScala',
-    duration: '3:56'
+    duration: '3:57'
   },
   {
     track: 'Evanscence - Bring Me to Life',
     title: 'Bring Me to Life',
-    src: 'https://media1.vocaroo.com/mp3/1epLbGOSdy91',
+    src: './music/Evanscence-Bring Me to Life.mp3',
     img: 'https://i1.sndcdn.com/artworks-000575750300-d8jycp-t500x500.jpg',
     avatar:
-      'https://d2tml28x3t0b85.cloudfront.net/tracks/artworks/000/646/964/original/3e6283.jpeg?1508949731',
+      'https://www.soyuz.ru/public/uploads/files/2/7319647/20190514233313ed3901b9e4.jpg',
     artist: 'Evanscence',
-    duration: '3:55'
+    duration: '3:56'
   },
   {
-    track: 'Two Steps From Hell - Rada',
-    title: 'Rada',
-    src: 'https://media1.vocaroo.com/mp3/13vunI2AwONe',
-    img: 'https://i.ytimg.com/vi/XD6SU_BL9QU/maxresdefault.jpg',
-    avatar: 'https://i.ytimg.com/vi/DQb0GE989-4/maxresdefault.jpg',
-    artist: 'Two Steps From Hell',
-    duration: '4:25'
+    track: 'Game of Thrones - Winter Has Come',
+    title: 'Winter Has Come',
+    src: './music/Game of Thrones - Winter Has Come.mp3',
+    img: 'https://images.hdqwalls.com/wallpapers/game-of-thrones-winter-has-come-artwork-4k-hm.jpg',
+    avatar:
+      'https://www.prime1studio.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/u/p/upmgot-03_a22.jpg',
+    artist: 'Game of Thrones',
+    duration: '6:57'
   },
   {
     track: 'Two Steps From Hell - StarSky',
     title: 'StarSky',
-    src: 'https://media1.vocaroo.com/mp3/19xzaifSY6XY',
+    src: './music/Two Stepts From Hell - StarSky Extended.mp3',
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTh4QCGzk0dcDNG7Ot0ehq10cBXFXPKOPh7eA&usqp=CAU',
     avatar: 'https://i.ytimg.com/vi/DQb0GE989-4/maxresdefault.jpg',
     artist: 'Two Steps From Hell',
-    duration: '12:08'
+    duration: '5:31'
   },
   {
     track: 'Skillet - Not Gonna Die',
     title: 'Not Gonna Die',
-    src: 'https://media1.vocaroo.com/mp3/16OQCDcDNCUU',
+    src: './music/Skillet - Not Gonna Die(edited version).mp3',
     img: 'https://lastfm.freetls.fastly.net/i/u/770x0/9ee07ce19a854fa4b9d6b36295fc702c.jpg',
     avatar: 'https://i1.sndcdn.com/artworks-000283725944-73m4ci-t500x500.jpg',
     artist: 'Skillet',
-    duration: '4:45'
+    duration: '4:46'
   },
   {
-    track: 'Skillet - Rise',
+    track: 'Skillet - What I Believe',
     title: 'Rise',
-    src: 'https://media1.vocaroo.com/mp3/1ds6CxEsio27',
-    img: 'https://i.pinimg.com/originals/d5/72/59/d572596e941decd992ad06c4aa9262aa.png',
+    src: './music/Skillet- What I believe.mp3',
+    img: 'https://i.ytimg.com/vi/O1llOfFkFmU/maxresdefault.jpg',
     avatar: 'https://i1.sndcdn.com/artworks-000283725944-73m4ci-t500x500.jpg',
     artist: 'Skillet',
-    duration: '3:47'
+    duration: '3:16'
   },
   {
     track: 'The Rasmus - Dead Promises',
