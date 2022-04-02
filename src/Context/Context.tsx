@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ReactNode } from 'react';
+import React, { useState, ReactNode } from 'react';
 
 export interface Audio {
   track: string;
@@ -99,8 +99,7 @@ export const list = [
     track: 'Lindsey Stirling - The Arena',
     title: 'The Arena',
     src: 'https://media1.vocaroo.com/mp3/1iMxN8SVgAhf',
-    img:
-      'https://www.purederekhough.com/wp-content/uploads/2016/06/Derek-Hough-Lindsey-Stirling-Arena-23.jpg',
+    img: 'https://www.purederekhough.com/wp-content/uploads/2016/06/Derek-Hough-Lindsey-Stirling-Arena-23.jpg',
     avatar:
       'https://i.pinimg.com/originals/89/c7/e5/89c7e51239fa5bc7a0adf2430b034d2a.jpg',
     artist: 'Lindsey Stirling',
@@ -139,8 +138,7 @@ export const list = [
     track: 'Two Steps From Hell - StarSky',
     title: 'StarSky',
     src: 'https://media1.vocaroo.com/mp3/19xzaifSY6XY',
-    img:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTh4QCGzk0dcDNG7Ot0ehq10cBXFXPKOPh7eA&usqp=CAU',
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTh4QCGzk0dcDNG7Ot0ehq10cBXFXPKOPh7eA&usqp=CAU',
     avatar: 'https://i.ytimg.com/vi/DQb0GE989-4/maxresdefault.jpg',
     artist: 'Two Steps From Hell',
     duration: '12:08'
@@ -149,8 +147,7 @@ export const list = [
     track: 'Skillet - Not Gonna Die',
     title: 'Not Gonna Die',
     src: 'https://media1.vocaroo.com/mp3/16OQCDcDNCUU',
-    img:
-      'https://lastfm.freetls.fastly.net/i/u/770x0/9ee07ce19a854fa4b9d6b36295fc702c.jpg',
+    img: 'https://lastfm.freetls.fastly.net/i/u/770x0/9ee07ce19a854fa4b9d6b36295fc702c.jpg',
     avatar: 'https://i1.sndcdn.com/artworks-000283725944-73m4ci-t500x500.jpg',
     artist: 'Skillet',
     duration: '4:45'
@@ -159,8 +156,7 @@ export const list = [
     track: 'Skillet - Rise',
     title: 'Rise',
     src: 'https://media1.vocaroo.com/mp3/1ds6CxEsio27',
-    img:
-      'https://i.pinimg.com/originals/d5/72/59/d572596e941decd992ad06c4aa9262aa.png',
+    img: 'https://i.pinimg.com/originals/d5/72/59/d572596e941decd992ad06c4aa9262aa.png',
     avatar: 'https://i1.sndcdn.com/artworks-000283725944-73m4ci-t500x500.jpg',
     artist: 'Skillet',
     duration: '3:47'
@@ -179,8 +175,7 @@ export const list = [
     track: 'Dj Aligator - From Paris To Berlin',
     title: 'From Paris To Berlin',
     src: 'https://media1.vocaroo.com/mp3/1jkjZXeUmhhy',
-    img:
-      'https://media.hitparade.ch/cover/big/infernal-from_paris_to_berlin_s_5.jpg',
+    img: 'https://media.hitparade.ch/cover/big/infernal-from_paris_to_berlin_s_5.jpg',
     avatar: 'https://www.mtvpersian.net/covers/thumbs2/20131_20131_400.jpg',
     artist: 'Dj Aligator',
     duration: '6:06'
@@ -208,8 +203,7 @@ export const list = [
     track: 'Johann Sebastian Bach - Badinerie',
     title: 'Badinerie',
     src: 'https://media1.vocaroo.com/mp3/18ZBT9oZaf95',
-    img:
-      'https://d1iiivw74516uk.cloudfront.net/eyJidWNrZXQiOiJwcmVzdG8tY292ZXItaW1hZ2VzIiwia2V5IjoiNzAzMjExOS4xLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MzAwfSwianBlZyI6eyJxdWFsaXR5Ijo2NX0sInRvRm9ybWF0IjoianBlZyJ9LCJ0aW1lc3RhbXAiOjE1NDk1MzQyMDl9',
+    img: 'https://d1iiivw74516uk.cloudfront.net/eyJidWNrZXQiOiJwcmVzdG8tY292ZXItaW1hZ2VzIiwia2V5IjoiNzAzMjExOS4xLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MzAwfSwianBlZyI6eyJxdWFsaXR5Ijo2NX0sInRvRm9ybWF0IjoianBlZyJ9LCJ0aW1lc3RhbXAiOjE1NDk1MzQyMDl9',
     avatar:
       'https://upload.wikimedia.org/wikipedia/commons/6/6a/Johann_Sebastian_Bach.jpg',
     artist: 'Johann Sebastian Bach',

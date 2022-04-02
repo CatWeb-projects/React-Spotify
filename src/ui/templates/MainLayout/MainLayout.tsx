@@ -10,7 +10,7 @@ import { PlayerOptions } from 'ui/molecules/PlayerOptions/PlayerOptions';
 import 'styles.scss';
 import 'ui/templates/MainLayout/MainLayout.scss';
 
-export const MainLayout: React.FC = ({ children }) => {
+export const MainLayout: React.FC = () => {
   return (
     <ProviderContext>
       <Router>

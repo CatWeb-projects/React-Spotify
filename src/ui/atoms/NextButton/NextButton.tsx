@@ -16,6 +16,7 @@ export const NextButton = () => {
 
   useEffect(() => {
     setFiles(list.map((item) => item.src));
+    // eslint-disable-next-line
   }, []);
 
   const nextSong = useCallback(
@@ -35,6 +36,7 @@ export const NextButton = () => {
         setPlaying(true);
       }
     },
+    // eslint-disable-next-line
     [files, counter, audioFiles, playing, setAudioFiles, setCounter, setPlaying]
   );
 

@@ -7,6 +7,7 @@ export const ShuffleButton = () => {
   const { setShuffle, shuffle } = useContext(Context);
   const changes = useCallback(() => {
     setActive(!active);
+    // eslint-disable-next-line
   }, [active, shuffle]);
 
   useEffect(() => {

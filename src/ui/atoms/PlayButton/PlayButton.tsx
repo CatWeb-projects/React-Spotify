@@ -2,9 +2,8 @@ import React, { useContext, useEffect, useCallback } from 'react';
 import { Context } from 'Context/Context';
 
 export const PlayButton = () => {
-  const { playing, setPlaying, active, setActive, audioFiles } = useContext(
-    Context
-  );
+  const { playing, setPlaying, active, setActive, audioFiles } =
+    useContext(Context);
 
   const changes = useCallback(() => {
     if (audioFiles) {
@@ -17,6 +16,7 @@ export const PlayButton = () => {
     } else {
       setPlaying(false);
     }
+    // eslint-disable-next-line
   }, [audioFiles, active, playing]);
 
   useEffect(() => {
@@ -25,6 +25,7 @@ export const PlayButton = () => {
     } else {
       setActive(true);
     }
+    // eslint-disable-next-line
   }, [playing]);
   return (
     <div className="play-button">

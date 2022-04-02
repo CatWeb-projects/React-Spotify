@@ -16,10 +16,7 @@ export const PrevButton = () => {
 
   useEffect(() => {
     setFiles(list.map((item) => item.src));
-  }, []);
-
-  useEffect(() => {
-    setFiles(list.map((item) => item.src));
+    // eslint-disable-next-line
   }, []);
 
   const prevSong = useCallback(
@@ -39,6 +36,7 @@ export const PrevButton = () => {
         setPlaying(true);
       }
     },
+    // eslint-disable-next-line
     [files, counter, audioFiles, playing]
   );
 

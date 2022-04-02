@@ -46,14 +46,17 @@ export const ProgressBar = () => {
         await current.pause();
       })();
     }
+    // eslint-disable-next-line
   }, [profile]);
 
   useEffect(() => {
     list.filter((item) => (item.src === audioFiles ? setSong(item) : false));
+    // eslint-disable-next-line
   }, [currentTime, audioFiles]);
 
   useEffect(() => {
     setFiles(list.map((item) => item.src));
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -75,6 +78,7 @@ export const ProgressBar = () => {
       current.currentTime = clickedTime;
       setClickedTime(0);
     }
+    // eslint-disable-next-line
   }, [currentTime, volume, playing, barTooltip, clickedTime]);
 
   const endOfSong = useCallback(async () => {
@@ -113,6 +117,7 @@ export const ProgressBar = () => {
         setPrevSong(counter + 1);
       }
     }
+    // eslint-disable-next-line
   }, [
     files,
     audioFiles,

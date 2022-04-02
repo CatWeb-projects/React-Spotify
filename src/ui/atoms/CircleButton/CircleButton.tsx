@@ -33,12 +33,14 @@ export const CircleButton = (props: ButtonProps) => {
     } else {
       setPlaying(false);
     }
+    // eslint-disable-next-line
   }, [active, audioFiles, counter, playing]);
 
   useEffect(() => {
     if (audioFiles === props.src) {
       setCurrentSong(true);
     }
+    // eslint-disable-next-line
   }, [audioFiles]);
 
   useEffect(() => {
@@ -50,6 +52,7 @@ export const CircleButton = (props: ButtonProps) => {
     if (playing === false) {
       setActive(false);
     }
+    // eslint-disable-next-line
   }, [audioFiles, playing]);
 
   return (

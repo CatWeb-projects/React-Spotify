@@ -17,6 +17,7 @@ export const ResumeButton = () => {
     } else {
       setPlaying(false);
     }
+    // eslint-disable-next-line
   }, [audioFiles, active, setPlaying]);
 
   return (

@@ -4,9 +4,8 @@ import { Context } from 'Context/Context';
 
 export const RepeatButton = () => {
   const [active, setActive] = useState<number>(0);
-  const { repeatOne, repeatAll, setRepeatAll, setRepeatOne } = useContext(
-    Context
-  );
+  const { repeatOne, repeatAll, setRepeatAll, setRepeatOne } =
+    useContext(Context);
 
   const changes = useCallback(() => {
     setActive((active) => active + 1);
@@ -35,6 +34,7 @@ export const RepeatButton = () => {
     if (active === 2) {
       setRepeatOne(true);
     }
+    // eslint-disable-next-line
   }, [active, repeatAll, repeatOne]);
 
   const tooltipText = useCallback(() => {

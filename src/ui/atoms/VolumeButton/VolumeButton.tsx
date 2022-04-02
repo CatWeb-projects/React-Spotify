@@ -16,12 +16,14 @@ export const VolumeButton = () => {
     } else {
       setVolume(currentVolume);
     }
+    // eslint-disable-next-line
   }, [active, setActive, setCurrentVolume, setVolume]);
 
   useEffect(() => {
     if (volume > 0 && active === false) {
       setActive(true);
     }
+    // eslint-disable-next-line
   }, [volume]);
 
   return (

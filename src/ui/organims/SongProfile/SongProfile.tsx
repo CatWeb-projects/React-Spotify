@@ -12,6 +12,7 @@ export const SongProfile = () => {
 
   useEffect(() => {
     setProfile(true);
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -19,6 +20,7 @@ export const SongProfile = () => {
     list.filter((item) =>
       item.track === match.name ? setAudioFiles(item.src) : false
     );
+    // eslint-disable-next-line
   }, [list, song, match]);
 
   return (
