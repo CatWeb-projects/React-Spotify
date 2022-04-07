@@ -106,6 +106,15 @@ export const list = [
     duration: '4:07'
   },
   {
+    track: 'Lindsey Stirling - Carol of the Bells-Vubey',
+    title: 'Carol of the Bells-Vubey',
+    src: './music/Lindsey Stirling - Carol of the Bells-Vubey.mp3',
+    img: 'https://i.ytimg.com/vi/EKkzbbLYPuI/maxresdefault.jpg',
+    avatar: 'https://i.ytimg.com/vi/EKkzbbLYPuI/maxresdefault.jpg',
+    artist: 'Lindsey Stirling',
+    duration: '3:06'
+  },
+  {
     track: 'eScala - Palladio',
     title: 'Palladio',
     src: './music/Escala - Palladio.mp3',
@@ -136,13 +145,34 @@ export const list = [
     duration: '6:57'
   },
   {
-    track: 'Two Steps From Hell - StarSky',
-    title: 'StarSky',
-    src: './music/Two Stepts From Hell - StarSky Extended.mp3',
+    track: 'Two Steps From Hell - Star Sky',
+    title: 'Star Sky',
+    src: './music/Two Stepts From Hell - Star Sky Extended.mp3',
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTh4QCGzk0dcDNG7Ot0ehq10cBXFXPKOPh7eA&usqp=CAU',
-    avatar: 'https://i.ytimg.com/vi/DQb0GE989-4/maxresdefault.jpg',
+    avatar:
+      'https://soundtrackfest.com/wp-content/uploads/2019/06/MN-2019-06-11-Concierto-no-oficial-de-Two-Steps-From-Hell-en-Berl%C3%ADn-en-2019.jpg',
     artist: 'Two Steps From Hell',
     duration: '5:31'
+  },
+  {
+    track: 'Two Steps From Hell - Dragonwing',
+    title: 'Dragonwing',
+    src: './music/Two Steps From Hell - Dragonwing.mp3',
+    img: 'https://i.ytimg.com/vi/nXCrk7GcSXw/maxresdefault.jpg',
+    avatar:
+      'https://soundtrackfest.com/wp-content/uploads/2019/06/MN-2019-06-11-Concierto-no-oficial-de-Two-Steps-From-Hell-en-Berl%C3%ADn-en-2019.jpg',
+    artist: 'Two Steps From Hell',
+    duration: '9:44'
+  },
+  {
+    track: 'Two Steps From Hell - Strength of a Thousand Men',
+    title: 'Strength of a Thousand Men',
+    src: './music/Two Steps From Hell - Strength of a Thousand Men.mp3',
+    img: 'https://i.ytimg.com/vi/qwJj2EpC8vg/maxresdefault.jpg',
+    avatar:
+      'https://soundtrackfest.com/wp-content/uploads/2019/06/MN-2019-06-11-Concierto-no-oficial-de-Two-Steps-From-Hell-en-Berl%C3%ADn-en-2019.jpg',
+    artist: 'Two Steps From Hell',
+    duration: '10:22'
   },
   {
     track: 'Skillet - Not Gonna Die',
@@ -160,40 +190,49 @@ export const list = [
     img: 'https://i.ytimg.com/vi/O1llOfFkFmU/maxresdefault.jpg',
     avatar: 'https://i1.sndcdn.com/artworks-000283725944-73m4ci-t500x500.jpg',
     artist: 'Skillet',
-    duration: '3:16'
+    duration: '3:17'
   },
   {
-    track: 'The Rasmus - Dead Promises',
-    title: 'Dead Promises',
-    src: 'https://media1.vocaroo.com/mp3/15rt6q1ebtws',
-    img: 'https://i.ytimg.com/vi/yVnewlvqqCc/hqdefault.jpg',
+    track: 'Skillet - Awake and Alive',
+    title: 'Awake and Alive',
+    src: './music/Skillet - Awake and Alive.mp3',
+    img: 'https://i.ytimg.com/vi/shCLR-CW8YM/maxresdefault.jpg',
+    avatar: 'https://i1.sndcdn.com/artworks-000283725944-73m4ci-t500x500.jpg',
+    artist: 'Skillet',
+    duration: '3:32'
+  },
+  {
+    track: `Carla's Dreams x EMAA - N-aud`,
+    title: 'N-aud',
+    src: `./music/Carla's Dreams x EMAA - N-aud.mp3`,
+    img: 'https://www.versuri.online/wp-content/uploads/2021/07/carla-s-dreams-emaa-n-aud-versuri.jpg',
     avatar:
-      'https://i.pinimg.com/originals/c8/21/ef/c821ef4fb65cd1fda3cfe6743cdf2e73.jpg',
-    artist: 'The Rasmus',
-    duration: '3:39'
-  },
-  {
-    track: 'Dj Aligator - From Paris To Berlin',
-    title: 'From Paris To Berlin',
-    src: 'https://media1.vocaroo.com/mp3/1jkjZXeUmhhy',
-    img: 'https://media.hitparade.ch/cover/big/infernal-from_paris_to_berlin_s_5.jpg',
-    avatar: 'https://www.mtvpersian.net/covers/thumbs2/20131_20131_400.jpg',
-    artist: 'Dj Aligator',
-    duration: '6:06'
+      'https://lastfm.freetls.fastly.net/i/u/ar0/9d58d88e09b73a07bc129e9144723289',
+    artist: `Carla's Dreams x EMAA`,
+    duration: '3:36'
   },
   {
     track: '5Sta Family - Вместе Мы',
     title: 'Вместе Мы',
-    src: 'https://media1.vocaroo.com/mp3/1hsYhJHg9mjO',
+    src: './music/5Sta Familty - Vmeste Mi.mp3',
     img: 'https://i.ytimg.com/vi/87qSqrGariI/maxresdefault.jpg',
     avatar: 'https://i.ytimg.com/vi/hicCCkeobQQ/maxresdefault.jpg',
     artist: '5Sta Family',
     duration: '3:45'
   },
   {
+    track: 'Tallisker & LA Vision - Somewhere',
+    title: 'Somewhere',
+    src: './music/Tallisker & LA Vision - Somewhere.mp3',
+    img: 'https://lmusic.kz/images/cover/tallisker-la-vision-somewhere.png',
+    avatar: 'https://i.ytimg.com/vi/znyfxeHgDuU/maxresdefault.jpg',
+    artist: 'Tallisker & LA Vision',
+    duration: '2:49'
+  },
+  {
     track: 'Ava Max - Kings & Queens',
     title: 'Kings & Queens',
-    src: 'https://media1.vocaroo.com/mp3/1915LLwGXi7b',
+    src: './music/Ava Max - Kings & Queens.mp3',
     img: 'https://i.ytimg.com/vi/q6LhCim5y_Y/maxresdefault.jpg',
     avatar:
       'https://younghollywood.com/images/stories/avamaxkingsandqueens.jpg',
@@ -201,14 +240,14 @@ export const list = [
     duration: '2:42'
   },
   {
-    track: 'Johann Sebastian Bach - Badinerie',
-    title: 'Badinerie',
-    src: 'https://media1.vocaroo.com/mp3/18ZBT9oZaf95',
-    img: 'https://d1iiivw74516uk.cloudfront.net/eyJidWNrZXQiOiJwcmVzdG8tY292ZXItaW1hZ2VzIiwia2V5IjoiNzAzMjExOS4xLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MzAwfSwianBlZyI6eyJxdWFsaXR5Ijo2NX0sInRvRm9ybWF0IjoianBlZyJ9LCJ0aW1lc3RhbXAiOjE1NDk1MzQyMDl9',
+    track: 'Dj Jfk - Around the World',
+    title: 'Around the World',
+    src: './music/Dj Jfk - Around the World.mp3',
+    img: 'https://i1.sndcdn.com/artworks-852bf698-fd76-4fd5-aeed-0d2a09fc51cd-0-t500x500.jpg',
     avatar:
-      'https://upload.wikimedia.org/wikipedia/commons/6/6a/Johann_Sebastian_Bach.jpg',
-    artist: 'Johann Sebastian Bach',
-    duration: '1:27'
+      'https://geo-media.beatport.com/image_size/590x404/c5287063-d41c-48d8-8d10-01f7c743f982.jpg',
+    artist: 'Dj Jfk',
+    duration: '2:00'
   }
 ];
 

@@ -23,7 +23,7 @@ export const CircleButton = (props: ButtonProps) => {
   const [active, setActive] = useState(false);
 
   const changes = useCallback(() => {
-    setActive(!active);
+    setActive((i) => !i);
     if (!active) {
       setAudioFiles(props.src);
       if (props.id) {

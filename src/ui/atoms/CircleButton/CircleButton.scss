@@ -15,26 +15,6 @@
     margin-top: 2px;
   }
 }
-.audio-list {
-  li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 52px;
-    span {
-      margin-right: 20px;
-      color: #ef5466;
-    }
-  }
-  a {
-    margin-right: auto;
-    color: #ef5466;
-    transition-duration: 0.15s;
-  }
-  a:hover {
-    color: #ca2a36;
-  }
-}
 .circle-button-hover {
   background-image: url('http://cdns-files.dzcdn.net/cache/slash/images/common/animated/equalizer/12x12/inverse.1ed354e01b9e97207f6ac710e6c23eaa.gif');
   background-repeat: no-repeat;

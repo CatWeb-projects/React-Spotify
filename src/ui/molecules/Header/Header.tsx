@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import 'ui/molecules/Header/Header.scss';
 
 export const Header = () => {
   return (
     <div className="nav-links">
       <div className="nav-links__logo">
-        <a href="/">
+        <Link to="/">
           <img src="./deezer.png" alt="deezer" />
-        </a>
+        </Link>
       </div>
     </div>
   );

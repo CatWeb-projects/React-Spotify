@@ -13,7 +13,7 @@ export const AudioList = () => {
       <ResumeButton />
       <div className="tracks-nr">
         <span>#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Track</span>
-        <span>L.</span>
+        <span>Length.</span>
       </div>
       <ul className="audio-list">
         {list &&

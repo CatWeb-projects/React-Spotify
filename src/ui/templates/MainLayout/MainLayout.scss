@@ -1,24 +1,35 @@
+.main-container {
+  height: calc(100vh - 77px);
+  overflow-y: scroll;
+}
+
 .music {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
 }
+
 .resume-button-div {
   margin: 10px;
 }
+
 .tracks-nr {
   display: flex;
   justify-content: space-between;
   height: 52px;
   align-items: center;
   border-top: 1px solid #eaeaea;
+
   span:last-child {
     margin-right: 20px;
   }
 }
+
 .player-container {
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: 100;
   width: 100%;
   padding: 0 24px;
   height: 80px;
@@ -28,6 +39,42 @@
   display: flex;
   justify-content: space-between;
 }
-.audio-list li {
-  border-top: 1px solid #eaeaea;
+
+.audio-list {
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+    border-top: 1px solid #eaeaea;
+    margin: 5px;
+    span {
+      margin: 0 10px;
+      color: #ef5466;
+    }
+  }
+  a {
+    margin-right: auto;
+    color: #ef5466;
+    transition-duration: 0.15s;
+  }
+  a:hover {
+    color: #ca2a36;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .main-container {
+    padding: 0 32px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    padding: 0 16px;
+  }
+  .player-container {
+    flex-direction: column;
+    padding: 0;
+  }
 }

@@ -2,6 +2,7 @@
   max-width: 800px;
   width: 80%;
   margin: auto;
+  padding: 0 8px;
 }
 .bar-wrapper {
   user-select: none;
@@ -36,5 +37,17 @@
   }
   &__knob {
     display: block;
+  }
+}
+
+.song-text {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .song-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

@@ -4,6 +4,7 @@ import { Context } from 'Context/Context';
 type active = {
   active: boolean;
 };
+
 export const VolumeBar = (props: active) => {
   const { setVolume } = useContext(Context);
   const inputValue = useRef(null);
